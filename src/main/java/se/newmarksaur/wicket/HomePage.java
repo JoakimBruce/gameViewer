@@ -1,4 +1,4 @@
-package se.newmarksaur;
+package se.newmarksaur.wicket;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;

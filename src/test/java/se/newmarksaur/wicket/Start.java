@@ -1,4 +1,4 @@
-package se.newmarksaur;
+package se.newmarksaur.wicket;
 
 import java.lang.management.ManagementFactory;
 

@@ -1,8 +1,11 @@
-package se.newmarksaur;
+package se.newmarksaur.wicket;
 
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import se.newmarksaur.wicket.HomePage;
+import se.newmarksaur.wicket.WicketApplication;
 
 /**
  * Simple test using the WicketTester

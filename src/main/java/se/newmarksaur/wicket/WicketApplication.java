@@ -1,4 +1,4 @@
-package se.newmarksaur;
+package se.newmarksaur.wicket;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
@@ -7,7 +7,7 @@ import org.apache.wicket.protocol.http.WebApplication;
  * Application object for your web application.
  * If you want to run this application without deploying, run the Start class.
  * 
- * @see se.newmarksaur.Start#main(String[])
+ * @see se.newmarksaur.wicket.Start#main(String[])
  */
 public class WicketApplication extends WebApplication
 {
