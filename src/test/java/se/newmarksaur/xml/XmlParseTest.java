@@ -10,16 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class XmlParseTest {
+	static final Logger log = LoggerFactory.getLogger(XmlParseTest.class);
 
 	@Test
 	public void testParseOwned() {
-		Logger log = LoggerFactory.getLogger(XmlParseTest.class);
-
 		try (Resource ownedGames = Resource.newClassPathResource("/OwnedGames.xml")) {
 			if (ownedGames == null) {
 				fail("Failed to get file");
@@ -36,11 +34,27 @@ public class XmlParseTest {
 					Element eElement = (Element) nNode;
 					Element name = (Element) eElement.getElementsByTagName("name").item(0);
 
-					String objectId = eElement.getAttribute("objectid");
+//					String objectId = eElement.getAttribute("objectid");
 					log.info(name.getTextContent());
 				}
 
 			}
+		}
+		catch (IOException e) {
+			fail("Failed to get file");
+		}
+	}
+
+	@Test
+	public void testParseGames() {
+		try (Resource games = Resource.newClassPathResource("/GameList.xml")) {
+			if (games == null) {
+				fail("Failed to get file");
+			}
+			GameListReader reader = new GameListReader(games.getFile());
+			Document doc = reader.getmDoc();
+			doc.getDocumentElement().normalize();
+			log.info("Root element :" + doc.getDocumentElement().getNodeName());
 		}
 		catch (IOException e) {
 			fail("Failed to get file");
